@@ -1,4 +1,4 @@
-## arquivos de configuraçã0
-
 # vim
+- vimrc
 # tmux
+- tmux.conf
