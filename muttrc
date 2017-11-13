@@ -6,11 +6,11 @@ set envelope_from = yes
 
 # IMAP SETTINGS
 set imap_user = "abreuferr@gmail.com"
-set imap_pass = "vcdujyqkyssxaabj"
+set imap_pass = "senha"
 
 # SMTP SETTINGS 
 set smtp_url = "smtps://abreuferr@gmail.com@smtp.gmail.com:465/"
-set smtp_pass = "vcdujyqkyssxaabj"
+set smtp_pass = "senha"
 
 # SSL SETTINGS 
 set ssl_starttls=yes
