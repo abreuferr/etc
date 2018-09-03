@@ -1,0 +1,9 @@
+[user]
+	name = caio ferreria
+	email = abreuferr@gmail.com
+[color]
+	ui = true
+[core]
+	excludesfile = /home/cosmo/.gitignore
+[help]
+	autocorrect = 1
