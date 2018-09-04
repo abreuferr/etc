@@ -1,10 +1,12 @@
+" Theme
+syntax on
+color dracula
+
 " Indentation & Tabs
 set autoindent
 set smartindent
-set tabstop=4
+set tabstop=2
 set shiftwidth=4
-set expandtab
-set smarttab
 
 " Display & format
 set number
@@ -22,10 +24,10 @@ set smartcase
 set scrolloff=5
 set laststatus=2
 
-" " Miscellaneous
+" Miscellaneous
 set nobackup
 set noswapfile
 set autochdir
 set undofile
-set visualbell
 set errorbells
+set visualbell
