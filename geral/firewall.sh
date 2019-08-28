@@ -13,8 +13,9 @@ $IPTABLES -t nat -F
 $IPTABLES -t mangle -F
 
 # masquerading
-$IPTABLES -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
+# wlan0 = interface de rede de acesso a internet.
 echo 1 > /proc/sys/net/ipv4/ip_forward
+$IPTABLES -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
 
 # opening all 
 $IPTABLES -P INPUT ACCEPT
