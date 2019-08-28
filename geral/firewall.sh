@@ -31,5 +31,8 @@ $IPTABLES -t filter -P FORWARD ACCEPT
 # web proxy squid
 $IPTABLES -t nat -A PREROUTING -i $LAN1 -p tcp --dport 80 -j REDIRECT --to-port 3128
 
+# redirecionar o trafego para o host squid.
+$IPTABLES -t nat -A PREROUTING -i $LAN1 -p tcp --dport 80 -j DNAT --to-destination 192.168.10.3:3128
+
 # redirecionamento de porta para acesso externo.
 $IPTABLES -t nat -A PREROUTING -p tcp -d $WAN --dport 80 -j DNAT --to 192.168.10.15:80
