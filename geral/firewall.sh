@@ -1,11 +1,14 @@
 #!/bin/bash
 
+# variavel de trabalho
 IPTABLES=/sbin/iptables
 
-# recover IPs
-ETH0IP=`ifconfig wlan0 | grep "inet addr:" | sed 's/.*inet addr://' | cut -d ' ' -f 1`
-ETH1IP=`ifconfig eth0 | grep "inet addr:" | sed 's/.*inet addr://' | cut -d ' ' -f 1`
-ETH2IP=`ifconfig wlan1 | grep "inet addr:" | sed 's/.*inet addr://' | cut -d ' ' -f 1`
+# Interface de rede ligada a internet
+WAN="wlan0";
+# Interface de rede ligada a rede interna 1
+LAN1="eth0";
+# Interface de rede ligada a rede interna 2
+LAN2="wlan1";
 
 # clean all possible old mess
 $IPTABLES -t filter -F 
@@ -13,9 +16,8 @@ $IPTABLES -t nat -F
 $IPTABLES -t mangle -F
 
 # masquerading
-# wlan0 = interface de rede de acesso a internet.
 echo 1 > /proc/sys/net/ipv4/ip_forward
-$IPTABLES -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
+$IPTABLES -t nat -A POSTROUTING -o $WAN -j MASQUERADE
 
 # opening all 
 $IPTABLES -P INPUT ACCEPT
@@ -27,8 +29,7 @@ $IPTABLES -t nat -P PREROUTING ACCEPT
 $IPTABLES -t filter -P FORWARD ACCEPT
 
 # web proxy squid
-# ens34 - interface interna
-$IPTABLES -t nat -A PREROUTING -i ens34 -p tcp --dport 80 -j REDIRECT --to-port 3128
+$IPTABLES -t nat -A PREROUTING -i $LAN1 -p tcp --dport 80 -j REDIRECT --to-port 3128
 
 # redirecionamento de porta para acesso externo.
-$IPTABLES -t nat -A PREROUTING -p tcp -d $ETH1P --dport 80 -j DNAT --to 192.168.10.15:80
+$IPTABLES -t nat -A PREROUTING -p tcp -d $WAN --dport 80 -j DNAT --to 192.168.10.15:80
