@@ -8,7 +8,7 @@ ETH1IP=`ifconfig eth0 | grep "inet addr:" | sed 's/.*inet addr://' | cut -d ' ' 
 ETH2IP=`ifconfig wlan1 | grep "inet addr:" | sed 's/.*inet addr://' | cut -d ' ' -f 1`
 
 # clean all possible old mess
-$IPTABLES -F 
+$IPTABLES -t filter -F 
 $IPTABLES -t nat -F 
 $IPTABLES -t mangle -F
 
