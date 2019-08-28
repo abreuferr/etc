@@ -28,4 +28,7 @@ $IPTABLES -t filter -P FORWARD ACCEPT
 
 # web proxy squid
 # ens34 - interface interna
-iptables -t nat -A PREROUTING -i ens34 -p tcp --dport 80 -j REDIRECT --to-port 3128
+$IPTABLES -t nat -A PREROUTING -i ens34 -p tcp --dport 80 -j REDIRECT --to-port 3128
+
+# redirecionamento de porta para acesso externo.
+$IPTABLES -t nat -A PREROUTING -p tcp -d $ETH1P --dport 80 -j DNAT --to 192.168.10.15:80
