@@ -7,3 +7,5 @@
 	excludesfile = /home/cosmo/.gitignore
 [help]
 	autocorrect = 1
+[init]
+	defaultbranch = main
