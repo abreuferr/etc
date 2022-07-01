@@ -18,6 +18,7 @@
 	untracked = cyan
 [core]
 	excludesfile = /home/cferreira/.gitignore
+	editor = vim
 [help]
 	autocorrect = 1
 [init]
