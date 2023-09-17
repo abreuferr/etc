@@ -157,5 +157,5 @@ exec --no-startup-id xscreensaver
 # notification-daemons
 exec --no-startup-id dunst
 
-# wallpaper
-exec always nitrogen --restore
+# volume control
+exec --no-startup-id pasystray
