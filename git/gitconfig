@@ -1,6 +1,9 @@
-[user]
-	name = caio abreu ferrereira
-	email = abreuferr@gmail.com
+[includeIf "gitdir/i:~/projects/pessoal/"]
+	path = ~/projects/pessoal/.gitconfig
+
+[includeIf "gitdir/i:~/projects/mt4/"]
+	path = ~/projects/mt4/.gitconfig
+
 [color]
 	branch = auto
 	diff = auto
@@ -23,8 +26,6 @@
 [core]
 	excludesfile = ~/.gitignore
 	editor = vim
-[help]
-	autocorrect = 1
 [init]
 	defaultbranch = main
 [filter "lfs"]
@@ -32,3 +33,8 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[help]
+        autocorrect = 1
+
+[pull]
+    rebase = false

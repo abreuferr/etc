@@ -116,3 +116,56 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# 
+# latex
+#
+
+# Arquivos de saída comuns
+*.aux
+*.log
+*.out
+*.toc
+
+# Arquivos gerados pelo LaTeX com suporte a sincronização
+*.synctex.gz
+
+# Arquivos gerados pelo latexmk
+*.fdb_latexmk
+*.fls
+
+# Arquivos de índices e glossários
+*.idx
+*.ilg
+*.ind
+*.glo
+*.gls
+*.ist
+*.acn
+*.acr
+*.alg
+
+# Arquivos de bibliografia
+*.bbl
+*.blg
+
+# Arquivos de fontes e métricas geradas
+*.lof
+*.lot
+*.lol
+
+# Arquivos temporários
+*.dvi
+*.ps
+*.pdf
+
+# Arquivos de figuras e diagramas temporários
+*.eps
+*.svg
+
+# Arquivos de cache do compilador
+*.bcf
+*.run.xml
+
+# Arquivos de pré-compilação
+*.xdy
