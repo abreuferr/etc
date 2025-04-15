@@ -1,0 +1,12 @@
+# Aparência
+color=000000
+indicator-radius=100
+indicator-thickness=7
+
+# Efeitos
+fade-in=0.5
+grace=2
+
+# Segurança
+ignore-empty-password
+show-failed-attempts
