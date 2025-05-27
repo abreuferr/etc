@@ -29,7 +29,7 @@
         "sway/language",
         "battery",
         "battery#bat2",
-	"custom/disk-sda1",
+	    "custom/disk-sda1",
         "custom/disk-sdb1",
         "clock",
         "tray",
@@ -215,18 +215,14 @@
 		}
     },
     "custom/disk-sda1": {
-    	"format": "SDA1: {}",
+    	"format": "\uf0a0 {}",
     	"interval": 30,
-    	"exec": "df -h /dev/sda1 | awk 'NR==2 {print $4}' || echo 'n/a'",
-    	"tooltip": true,
-	"exec-tooltip": "~/.config/waybar/scripts/disk-info.sh /dev/sda1 tooltip"
-     },
+    	"exec": "df -h /dev/sda1 | awk 'NR==2 {print $4}' || echo 'n/a'"
+    },
 
-     "custom/disk-sdb1": {
-	"format": "SDB1: {}",
-	"interval": 30,
-	"exec": "df -h /dev/sdb1 | awk 'NR==2 {print $4}' || echo 'n/a'",
-	"tooltip": true,
-	"exec-tooltip": "~/.config/waybar/scripts/disk-info.sh /dev/sdb1 tooltip"
-     }
+    "custom/disk-sdb1": {
+    	"format": "\uf0a0 {}",
+    	"interval": 30,
+    	"exec": "df -h /dev/sdb1 | awk 'NR==2 {print $4}' || echo 'n/a'"
+    },
 }
